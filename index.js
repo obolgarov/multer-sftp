@@ -53,7 +53,7 @@ module.exports = function (opts) {
           .then(() => next(null, {
             filename: filename,
             dest: dest,
-            fullpath: fullpath
+            fullPath: fullPath
           }))
           .catch((err) => next(err));
         });
@@ -61,7 +61,7 @@ module.exports = function (opts) {
     },
 
     _removeFile: function (req, file, next) {
-      this.removeFile(file.path)
+      this.removeFile(file.fullPath);
       .then(() => next(null))
       .catch((err) => next(err));
     },
