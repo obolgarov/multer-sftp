@@ -1,0 +1,19 @@
+{
+  "name": "multer-sftp",
+  "version": "1.0.0",
+  "description": "simple sftp storage engine for multer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obolgarov/multer-sftp.git"
+  },
+  "author": "Oleksandr Bolgarov <oleksandr@bolgarov.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obolgarov/multer-sftp/issues"
+  },
+  "homepage": "https://github.com/obolgarov/multer-sftp#readme"
+}
