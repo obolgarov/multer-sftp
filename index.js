@@ -1,7 +1,28 @@
 var path = require('path');
 var crypto = require('crypto'); // for random bytes
 
-module.exports = {
+module.exports = function (opts) {
+  if (!opts || !opts.sftp) {
+    throw 'sftp connection settings must be defined';
+  }
+
+  let client = new Client();
+  client.connect(opts.sftp);
+
+  let clientReady = new Promise((resolve, reject) => {
+    client.on('ready', resolve);
+  });
+
+  let sftpPromise = new Promise((resolve, reject) => {
+    clientReady.then(() => {
+      client.sftp((err, sftp) => {
+        if (err) reject(err);
+        resolve(sftp);
+      });
+    });
+  });
+
+  return {
     opts: opts,
     client: client,
     clientReady: clientReady,
