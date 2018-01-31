@@ -61,7 +61,7 @@ module.exports = function (opts) {
     },
 
     _removeFile: function (req, file, next) {
-      this.removeFile(file.fullPath);
+      this.removeFile(file.fullPath)
       .then(() => next(null))
       .catch((err) => next(err));
     },
