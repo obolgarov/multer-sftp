@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/obolgarov/multer-sftp/issues"
   },
-  "homepage": "https://github.com/obolgarov/multer-sftp#readme"
+  "homepage": "https://github.com/obolgarov/multer-sftp#readme",
+  "dependencies": {
+    "ssh2": "^0.5.5"
+  }
 }

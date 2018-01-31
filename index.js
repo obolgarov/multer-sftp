@@ -1,5 +1,6 @@
 var path = require('path');
 var crypto = require('crypto'); // for random bytes
+var Client = require('ssh2').Client;
 
 module.exports = function (opts) {
   if (!opts || !opts.sftp) {
@@ -73,9 +74,9 @@ module.exports = function (opts) {
           sftp.readdir(dir, (err, list) => {
             if (err) reject(err);
             resolve(list);
-          })
+          });
         }).catch(reject);
-      })
+      });
     },
     writeFile: function (file, dest) {
       return new Promise((resolve, reject) => {
@@ -94,7 +95,7 @@ module.exports = function (opts) {
             resolve('successfully removed: ' + filePath);
           });
         }).catch(reject);
-      })
+      });
     }
-  }
+  };
 };
